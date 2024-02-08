@@ -8,13 +8,13 @@ const container = React.createElement(
 );
 console.log(container);
 
-//🔴jsx code
+//🟡jsx code
 const jsxConatiner = (
   <h1 className="heading1">This is Episode 3 of Namaste React using jsx</h1>
 );
 // console.log(jsxConatiner);
 
-//🔴React Components ----- 2 types
+//🟡React Components ----- 2 types
 /*
 1) Class based components ---- OLD way ---- in the later videos
 2) Functional components ---- NEW way ⬇️
@@ -30,7 +30,23 @@ const HeadingComponents = () => (
   </div>
 );
 
-//🔴React Element vs React components ---- (difference is 1️⃣ React Elements name is written in normal format while React components name is written in camel case conventions with the first letter in uppercase and 2️⃣ whenever we render our React elements we write the name itself in the braces like (element) but when we render React component we do this (<ReactComponent/>))
+//🟡There are two ways to write functional components but both are same
+//One way is without return statement
+const WithoutReturn = () => (
+  <div>
+    <h1>I am here without Return</h1>
+  </div>
+)
+//Another way is to write with return statement
+const WithReturn = () => {
+  return (
+    <div>
+      <h1>I am here with Return</h1>
+    </div>
+  )
+}
+
+//🟡React Element vs React components ---- (difference is 1️⃣ React Elements name is written in normal format while React components name is written in camel case conventions with the first letter in uppercase and 2️⃣ whenever we render our React elements we write the name itself in the braces like (element) but when we render React component we do this (<ReactComponent/>))
 //React element
 const reactElement = (
   <h1>I am a React Element, I don't have any arrow functions , and I want my function name just as any other normal names not in Uppercase</h1>
@@ -48,7 +64,7 @@ const ReactComponent = () => (
   </div>
 )
 
-//🔴 What is Component Composition ------ Composing components into one another (its like you have a component and you have to put another component inside the present component)
+//🟡 What is Component Composition ------ Composing components into one another (its like you have a component and you have to put another component inside the present component)
 //Take the above example
 
 
