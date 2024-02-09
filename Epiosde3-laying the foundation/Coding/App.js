@@ -51,12 +51,15 @@ const WithReturn = () => {
 const reactElement = (
   <h1>I am a React Element, I don't have any arrow functions , and I want my function name just as any other normal names not in Uppercase</h1>
 )
-//React component
-const Component = () => (
+//React component AND
+//🟡 What is Component Composition ------ Composing components into one another (its like you have a component and you have to put another component inside the present component)
+//Take the above example
+const Component = () => { 
+  return(
   <div id="container1">
     <h1>Just an example of component composition which is going to enter inside the below ReactComponent</h1>
   </div>
-)
+)}
 const ReactComponent = () => (
   <div id="container2">
   <Component/>
@@ -64,10 +67,30 @@ const ReactComponent = () => (
   </div>
 )
 
-//🟡 What is Component Composition ------ Composing components into one another (its like you have a component and you have to put another component inside the present component)
-//Take the above example
+
+//🟡Now that we know how to insert a React component inside another react component ....let's learn how to insert React elements inside react components and moreeeee........
+//🔴To write any javascript expression (be it any mathematical expression any functions , arrays, objects, or even a console.log or if you have to pass any React Element inside any React Components or you want to put any react element inside react element, just write that inside curly braces "{}")
+const reactEle = (
+  <div>
+  {reactElement}
+    <h1>React Element</h1>
+  </div>
+)
+const ReactComp = () => {
+  return (
+    <div>
+      {<h1>Heading inside curly braces</h1>}
+      <h1>{reactEle} is inside React Component</h1>
+      {`I am any Javascript expression ${2+2}`}
+    </div>
+  )
+}
+
+//🔴🟡🔵VVI ----> Suppose you are inserting any React Component inside react Element and that react component is defined below that react element , the browser will show you error because the componentis defined with const keyword and you cannot use any const variable before initialization ( so move to the top first then use it)
+
+
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(container);
-root.render(<ReactComponent/>);
+root.render(<ReactComp/>);
