@@ -79,6 +79,8 @@ const reactEle = (
 const ReactComp = () => {
   return (
     <div>
+      {/* Below is the another way to using React components . At the end of the day this is also an arrow function so we can use it like this also. So these three types are all same 1️⃣ {ReactComponent()} 2️⃣<ReactComponent/> 3️⃣<ReactComponent></ReactComponent> */}
+      {ReactComponent()}
       {<h1>Heading inside curly braces</h1>}
       <h1>{reactEle} is inside React Component</h1>
       {`I am any Javascript expression ${2+2}`}
