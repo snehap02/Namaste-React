@@ -19,12 +19,12 @@ const Header = () => {
     )
 }
 
-const RestaurantCard = () => {
+const RestaurantCard = (props) => {
     return (
         <div className="res-card" style={{backgroundColor: "#f0f0f0"}}>
             <img src="https://cookingfromheart.com/wp-content/uploads/2017/09/Veg-Biryani-in-Pressure-Cooker-6.jpg" alt="res-logo" />
-            <h3>Meghana Foods</h3>
-            <h4>Biryani, North Indian, Asian</h4>
+            <h3>{props.resName}</h3>
+            <h4>{props.cuisine}</h4>
             <h4>⭐4.4</h4>
             <h4>38 Minutes</h4>
         </div>
@@ -38,16 +38,8 @@ const Body = () => {
                 Search
             </div>
             <div className="res-container">
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
+                <RestaurantCard resName="Meghana Foods" cuisine="Biryani, North Indian, Asian"/>
+                <RestaurantCard resName="KFC" cuisine="Fast Food"/>
             </div>
         </div>
     )
