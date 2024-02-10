@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px 0 20px;
+    align-items: center;
+    border-bottom: 1px solid gray;
+}
+.logo{
+    width: 60px;
+}
+.links{
+    display: flex;
+    gap: 40px;
+}
+.links li{
+    list-style-type: none;
+    cursor: pointer;
+}
