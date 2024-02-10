@@ -21,3 +21,36 @@
     list-style-type: none;
     cursor: pointer;
 }
+.search{
+    padding: 8px;
+}
+.res-card{
+    display: flex;
+    flex-direction: column;
+    padding: 5px 5px 5px 5px;
+    width: 300px;
+    height: 300px;
+}
+.res-card:hover{
+    border: 1px solid gray;
+    cursor: pointer;
+}
+.res-card img{
+    width: 100%;
+}
+.res-card h3{
+    font-size: 24px;
+}
+.res-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2px;
+}
+@media screen and (max-width: 601px) {
+    .res-container{
+        justify-content: center;
+        align-items: center;
+    }
+}

@@ -19,13 +19,48 @@ const Header = () => {
     )
 }
 
-const AppMain = () => {
+const RestaurantCard = () => {
     return (
-        <div className="container">
+        <div className="res-card" style={{backgroundColor: "#f0f0f0"}}>
+            <img src="https://cookingfromheart.com/wp-content/uploads/2017/09/Veg-Biryani-in-Pressure-Cooker-6.jpg" alt="res-logo" />
+            <h3>Meghana Foods</h3>
+            <h4>Biryani, North Indian, Asian</h4>
+            <h4>⭐4.4</h4>
+            <h4>38 Minutes</h4>
+        </div>
+    )
+}
+
+const Body = () => {
+    return (
+        <div className="body">
+            <div className="search">
+                Search
+            </div>
+            <div className="res-container">
+                <RestaurantCard/>
+                <RestaurantCard/>
+                <RestaurantCard/>
+                <RestaurantCard/>
+                <RestaurantCard/>
+                <RestaurantCard/>
+                <RestaurantCard/>
+                <RestaurantCard/>
+                <RestaurantCard/>
+                <RestaurantCard/>
+            </div>
+        </div>
+    )
+}
+
+const AppContainer = () => {
+    return (
+        <div className="app">
             <Header/>
+            <Body/>
         </div>
     )
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppMain/>)
+root.render(<AppContainer/>)
