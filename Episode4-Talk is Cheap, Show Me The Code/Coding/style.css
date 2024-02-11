@@ -29,7 +29,6 @@
     flex-direction: column;
     padding: 5px 5px 5px 5px;
     width: 300px;
-    height: 300px;
 }
 .res-card:hover{
     border: 1px solid gray;
@@ -37,14 +36,16 @@
 }
 .res-card img{
     width: 100%;
+    height: 70%;
+    background-size: cover;
 }
 .res-card h3{
     font-size: 24px;
 }
 .res-container{
     display: flex;
+    justify-items: start;
     flex-wrap: wrap;
-    align-items: center;
     gap: 2px;
 }
 @media screen and (max-width: 601px) {
