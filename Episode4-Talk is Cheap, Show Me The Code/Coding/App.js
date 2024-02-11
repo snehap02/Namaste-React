@@ -26,7 +26,7 @@ const Header = () => {
 const RestaurantCard = (props) => {
   // const {resName, cuisine} = props;
   const { resData } = props;
-  const { name, cuisines, avgRating, slaString, cloudinaryImageId } =
+  const { name, cuisines, avgRating, slaString, cloudinaryImageId} =
     resData?.data;
   return (
     <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
@@ -2112,7 +2112,7 @@ const Body = () => {
       <RestaurantCard resData={resList[2]} />
       <RestaurantCard resData={resList[4]} /> */}
         {resList.map((restaurant) => (
-          <RestaurantCard resData={restaurant} />
+          <RestaurantCard key={restaurant.data.id} resData={restaurant} />
         ))}
       </div>
     </div>
