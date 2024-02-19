@@ -4,9 +4,9 @@ import { LOGO_URL } from "../utils/constants";
 const Header = () => {
   const [login, setLoginToLogout] = useState("Login");
 
-  useEffect(() => {
-    setLoginToLogout("Login");
-  }, []);
+  // useEffect(() => {
+  //   setLoginToLogout("Login");
+  // }, []);
   return (
     <div className="header">
       <div className="logo-container">
@@ -24,7 +24,8 @@ const Header = () => {
           <li>Cart</li>
           <button className="login" onClick={
             () => {
-              setLoginToLogout("LogOut");
+              login === 'Login' ? setLoginToLogout("Logout") : setLoginToLogout('Login')
+              
             }
           }>{login}</button>
         </ul>
