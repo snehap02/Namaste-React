@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { LOGO_URL } from "../utils/constants";
 
 const Header = () => {
+  const [login, setLoginToLogout] = useState("Login");
+
+  useEffect(() => {
+    setLoginToLogout("Login");
+  }, []);
   return (
     <div className="header">
       <div className="logo-container">
@@ -17,6 +22,11 @@ const Header = () => {
           <li>About US</li>
           <li>Contact US</li>
           <li>Cart</li>
+          <button className="login" onClick={
+            () => {
+              setLoginToLogout("LogOut");
+            }
+          }>{login}</button>
         </ul>
       </div>
     </div>

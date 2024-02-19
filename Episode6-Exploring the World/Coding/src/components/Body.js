@@ -20,11 +20,12 @@ const Body = () => {
   }
 
   //🟡conditional rendering
-  if(listOfRestaurents.length === 0){
-    return <Shimmer/>
-  }
+  // if(listOfRestaurents.length === 0){
+  //   return <Shimmer/>
+  // }
 
-  return (
+  //ternary operator from js
+  return listOfRestaurents.length === 0 ? <Shimmer/> : (
     <div className="body">
       {/* <div className="search">Search</div> */}
       <div className="filter">
