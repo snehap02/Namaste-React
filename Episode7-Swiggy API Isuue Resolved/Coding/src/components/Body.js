@@ -23,8 +23,9 @@ const Body = () => {
     setListOfRestaurents(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
-    setFilteredList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    
+    setFilteredList(
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   };
 
   return listOfRestaurents.length === 0 ? (
@@ -45,7 +46,9 @@ const Body = () => {
             onClick={() => {
               //onClick filter the restaurant cards based on the search condition and update the UI
               const filterRes = listOfRestaurents.filter((restrau) =>
-                restrau.info.name.toLowerCase().includes(searchText.toLowerCase())
+                restrau.info.name
+                  .toLowerCase()
+                  .includes(searchText.toLowerCase())
               );
               setFilteredList(filterRes);
             }}
