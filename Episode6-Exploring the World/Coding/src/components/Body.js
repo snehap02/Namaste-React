@@ -53,7 +53,7 @@ const Body = () => {
               //onClick filter the restaurant cards based on the search condition and update the UI
               // console.log(searchText);
               const filterRes = listOfRestaurents.filter((restrau) =>
-              //
+              //🟡 This is a JavaScript method that converts a string to lowercase. It's applied to both restrau.info.name and searchText.🔴Used in search functionalities to perform case-insensitive matching.
                 restrau.info.name.toLowerCase().includes(searchText.toLowerCase())
               );
               setFilteredList(filterRes);
