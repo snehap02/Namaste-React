@@ -3,7 +3,7 @@
 ### A) What would happen if we do console.log(useState())?
 ### B) Detailed explanation of useState() and useEffect() hooks.
 ### C) Where not to use useState().
-### D) Explanation on What happen if --- 
+### D) Explanation on What happens if --- 
 ` a) there is no dependency array in useEffect()`
 
 ` b) there is a dependency array in useEffect()` 
