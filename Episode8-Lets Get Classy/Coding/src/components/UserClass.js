@@ -1,12 +1,17 @@
 import React from "react";
 
-class UserClass extends React.Component {
+class UserClass extends React.Component { 
+  constructor(props){
+    super(props);
+  }
   render() {
+    const {name} = this.props;
     return (
       <div className="user-card">
-        <h2>Name: Sneha Purkayastha</h2>
+      {/* <h1>{this.props.name}</h1> */}
+        <h2>Name: {name}</h2>
         <h3>Email: sneha.purkayastha@gmail.com</h3>
-      </div>
+      </div> 
     );
   }
 }
