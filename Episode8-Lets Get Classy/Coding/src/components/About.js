@@ -5,8 +5,13 @@ class About extends React.Component {
   constructor(props) {
     super(props);
   }
+
+  componentDidMount(){
+    console.log("parent mount");
+  }
+
   render() {
-    return (
+    return ( 
       <div>
         <h1>About Class Based Component</h1>
 
