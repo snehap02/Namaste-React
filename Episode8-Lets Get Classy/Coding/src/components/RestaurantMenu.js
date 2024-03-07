@@ -41,7 +41,7 @@ const RestaurantMenu = () => {
       <hr></hr>
       <h1>Menus :-------</h1>
       <ul>
-        {itemCards.map((item) => (
+        {itemCards?.map((item) => (
           //always mention key when you are using map
           <li key={item.card.info.id}>
             {item.card.info.name} -- Rs{" "}
