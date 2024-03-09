@@ -5,25 +5,21 @@ class About extends React.Component {
   constructor(props) {
     super(props);
 
-    console.log("Parent Constructor");
+    // console.log("Parent Constructor");
   }
-  
 
-  componentDidMount(){
-    console.log("parent mount");
+  componentDidMount() {
+    // console.log("parent mount");
   }
 
   render() {
-    console.log("Parent Render");
-    return ( 
-      <div>
+    // console.log("Parent Render");
+    return (
+      <div className="user-card-details">
         <h1>About Class Based Component</h1>
 
         <UserClass
           name={"Sneha Purkayastha (is using Class based component)"}
-        />
-        <UserClass
-          name={"Kunal Purkayastha (is also using Class based component)"}
         />
       </div>
     );

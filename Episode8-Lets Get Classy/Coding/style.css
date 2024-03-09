@@ -84,6 +84,22 @@
     display: flex;
     justify-content: space-between;
 }
+.user-card{
+    width: 100%;
+    height: 50vh;
+    padding: 0 10px 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.user-card-details{
+    width: 100%;
+    padding: 0 10px 0 10px;
+    text-align: center;
+    background: rgb(201, 156, 139);
+}
+
 @media screen and (max-width: 601px) {
     .res-container{
         justify-content: center;
