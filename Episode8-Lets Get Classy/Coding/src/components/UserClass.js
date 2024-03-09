@@ -26,10 +26,14 @@ class UserClass extends React.Component {
     })
   }
   componentDidUpdate(){
+    this.timer = setInterval(() => {
+      console.log("NR");
+    }, 1000);
     console.log("Component did upadate");
   }
 
   componentWillUnmount(){
+    clearInterval(this.timer);
     console.log("component will unmount");
   }
 
