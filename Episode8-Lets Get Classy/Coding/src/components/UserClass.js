@@ -25,6 +25,13 @@ class UserClass extends React.Component {
       userCard: json
     })
   }
+  componentDidUpdate(){
+    console.log("Component did upadate");
+  }
+
+  componentWillUnmount(){
+    console.log("component will unmount");
+  }
 
   render() {
     // const { name } = this.props;
