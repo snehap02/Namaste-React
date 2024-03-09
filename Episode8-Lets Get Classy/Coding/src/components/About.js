@@ -26,14 +26,4 @@ class About extends React.Component {
   }
 }
 
-// const About = () => {
-//   return (
-//     <div>
-//       <h1>About Us Page</h1>
-
-//       <UserClass name={"Sneha Purkayastha (is using Class based component)"}/>
-//     </div>
-//   )
-// }
-
 export default About;
