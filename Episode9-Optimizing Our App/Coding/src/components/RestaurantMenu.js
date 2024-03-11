@@ -1,23 +1,12 @@
-import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
-import { MENU_API } from "../utils/constants";
+import useRestaurantmenu from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
-  const [resInfo, setResInfo] = useState(null);
-
   const { resId } = useParams();
 
-  useEffect(() => {
-    fetchMenu();
-  }, []);
-
-  const fetchMenu = async () => {
-    const data = await fetch(MENU_API + resId + "&catalog_qa=undefined&submitAction=ENTER");
-    const json = await data.json();
-    console.log(json);
-    setResInfo(json.data);
-  };
+  //this resInfo will contain the return value from the function where we are fetching the api inside our custom hook.
+  const resInfo = useRestaurantmenu(resId);
 
   // 🟡 if we first try to find names and all the properties from resInfo without checking whether its value is null or not react will not able to find any properties inside it, so first check the value of resInfo before finding any value
 
