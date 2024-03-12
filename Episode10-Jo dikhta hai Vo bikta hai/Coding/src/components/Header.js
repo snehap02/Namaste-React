@@ -10,12 +10,12 @@ const Header = () => {
 
   useEffect(() => {}, []);
   return (
-    <div className="header">
+    <div className="header flex justify-between">
       <div className="logo-container">
-        <img src={LOGO_URL} alt="" className="logo" />
+        <img src={LOGO_URL} alt="" className="logo w-16" />
       </div>
       <div className="nav-links">
-        <ul className="links">
+        <ul className="links flex gap-4 leading-[3rem] md:leading-[3rem] font-medium md:gap-8 text-xs md:text-base">
           <li>Online Status: {isOnline ? "🟢" : "🔴"}</li>
           <li>
             <Link to="/">Home</Link>

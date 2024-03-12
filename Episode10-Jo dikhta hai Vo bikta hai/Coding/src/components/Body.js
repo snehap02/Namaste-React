@@ -38,17 +38,17 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter">
-        <div className="search">
+      <div className="filter flex justify-between items-center py-6 px-8">
+        <div className="search flex gap-4">
           <input
             type="text"
-            className="search-box"
+            className="search-box ring-2 outline-none rounded-md px-1"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
-          <button
+          <button className="text-lg font-medium bg-neutral-800 text-white rounded-md px-6 py-1 cursor-pointer"
             onClick={() => {
               //onClick filter the restaurant cards based on the search condition and update the UI
               const filterRes = listOfRestaurents.filter((restrau) =>
@@ -63,7 +63,7 @@ const Body = () => {
           </button>
         </div>
         <button
-          className="filter-btn"
+          className="filter-btn bg-neutral-700 text-white rounded-md h-10 px-4 cursor-pointer"
           onClick={() => {
             const filter = listOfRestaurents.filter(
               (val) => val.info.avgRating > 4
@@ -72,10 +72,10 @@ const Body = () => {
             setListOfRestaurents(filter);
           }}
         >
-          Click Here to Filter Restraurents
+          Top Rated Restraurents
         </button>
       </div>
-      <div className="res-container">
+      <div className="res-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-10 px-8 py-14">
         {filteredList?.map((restaurant) => (
           <Link key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}>
           <RestaurantCard resData={restaurant} />
