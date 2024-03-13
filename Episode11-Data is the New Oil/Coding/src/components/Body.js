@@ -72,7 +72,7 @@ const Body = () => {
             setListOfRestaurents(filter);
           }}
         >
-          Top Rated Restraurents
+          Top Rated Restaurants
         </button>
       </div>
       <div className="res-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-10 px-8 py-14">
