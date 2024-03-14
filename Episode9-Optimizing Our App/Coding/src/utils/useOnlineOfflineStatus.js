@@ -13,7 +13,7 @@ const useOnlineOfflineStatus = () => {
     });
   }, []);
 
-  //always return the value in boolean.
+  //always return the value in boolean. Either true or false.
   return isOnline;
 };
 
