@@ -11,6 +11,8 @@ const Body = () => {
   const [filteredList, setFilteredList] = useState([]);
   const [searchText, setSearchText] = useState("");
 
+  console.log(listOfRestaurents)
+
   useEffect(() => {
     fetchData();
   }, []);
