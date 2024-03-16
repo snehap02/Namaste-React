@@ -1,6 +1,7 @@
 import React from "react";
 import { CDN_URL } from "../utils/constants";
 
+//this restaurant card is the normal one which will give you all the data of cards
 const RestaurantCard = (props) => {
   // const {resName, cuisine} = props;
   const { resData } = props;
@@ -19,5 +20,18 @@ const RestaurantCard = (props) => {
     </div>
   );
 };
+
+//this is HOC of restaurantcard which will have the newly added restaurants with offer information and which will add into the previous resrtaurant card
+//HOC syntax ------ input(RestaurantCard) ---> output (returns RestaurantCardOffers)
+export const withOfferLabel = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label>Offers</label>
+        <RestaurantCard {...props}/>
+      </div>
+    )
+  }
+}
 
 export default RestaurantCard;

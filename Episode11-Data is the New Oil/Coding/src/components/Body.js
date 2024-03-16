@@ -4,6 +4,7 @@ import { useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineOfflineStatus from "../utils/useOnlineOfflineStatus";
+import { withOfferLabel } from "./RestaurantCard";
 
 const Body = () => {
   const [listOfRestaurents, setListOfRestaurents] = useState([]);
@@ -11,7 +12,9 @@ const Body = () => {
   const [filteredList, setFilteredList] = useState([]);
   const [searchText, setSearchText] = useState("");
 
-  console.log(listOfRestaurents)
+  console.log(listOfRestaurents);
+
+  const RestaurantCardOffer = withOfferLabel(RestaurantCard);
 
   useEffect(() => {
     fetchData();
@@ -34,7 +37,13 @@ const Body = () => {
 
   const isOnline = useOnlineOfflineStatus();
 
-  if(isOnline === false) return <h1>Oops!!! Looks like you are offline. Please check your internet connection.</h1>
+  if (isOnline === false)
+    return (
+      <h1>
+        Oops!!! Looks like you are offline. Please check your internet
+        connection.
+      </h1>
+    );
 
   return listOfRestaurents.length === 0 ? (
     <Shimmer />
@@ -50,7 +59,8 @@ const Body = () => {
               setSearchText(e.target.value);
             }}
           />
-          <button className="text-lg font-medium bg-neutral-800 text-white rounded-md px-6 py-1 cursor-pointer"
+          <button
+            className="text-lg font-medium bg-neutral-800 text-white rounded-md px-6 py-1 cursor-pointer"
             onClick={() => {
               //onClick filter the restaurant cards based on the search condition and update the UI
               const filterRes = listOfRestaurents.filter((restrau) =>
@@ -79,8 +89,17 @@ const Body = () => {
       </div>
       <div className="res-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-10 px-8 py-14">
         {filteredList?.map((restaurant) => (
-          <Link key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}>
-          <RestaurantCard resData={restaurant} />
+          <Link
+            key={restaurant.info.id}
+            to={"/restaurants/" + restaurant.info.id}
+          >
+            {/* if restraurant has discount info add a level of discount otherwise as it is  */}
+            {/* To make this change create a HOC inside restaurantcard which will return us this new changes if it is present. */}
+            {restaurant?.info?.aggregatedDiscountInfoV3 ? (
+              <RestaurantCardOffer resData={restaurant}/>
+            ) : (
+              <RestaurantCard resData={restaurant} />
+            )}
           </Link>
         ))}
       </div>
